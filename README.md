@@ -2,7 +2,7 @@
   <img src="https://media.giphy.com/media/scZPhLqaVOM1qG4lT9/giphy.gif" align="center"/>
 </div>
 
-<div id="badges">
+<div id="badges" align="center">
   <a href="https://www.linkedin.com/in/okhadi/">
     <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" align="center"/>
   </a>
