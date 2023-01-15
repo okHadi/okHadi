@@ -6,13 +6,29 @@
   <a href="https://www.linkedin.com/in/okhadi/">
     <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" align="center"/>
   </a>
-  <img src="https://komarev.com/ghpvc/?username=okHadi&style=flat-square&color=blue" alt=""/>
-
 </div>
+
+<img src="https://komarev.com/ghpvc/?username=okHadi&style=flat-square&color=blue" alt=""/>
 
 
 ### :man_technologist: About Me :
 
+- I am a backend developer from Pakistan 🇵🇰
+- Working on web-based applications
+- Interested in DevOps and Automation ⚙️
+
+### 🔗 Languages:
+
+<div>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" title="C" alt="C" width="40" height="40"/>&nbsp;
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" title="Javascript" alt="Javascript" width="40" height="40"/>&nbsp;
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" title="Python" alt="Python" width="40" height="40"/>&nbsp;
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" title="Bash" alt="Bash" width="40" height="40"/>&nbsp;
+</div>
+
+
+
+          
 <!--
 **okHadi/okHadi** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
