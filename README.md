@@ -6,9 +6,10 @@
   <a href="https://www.linkedin.com/in/okhadi/">
     <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" align="center"/>
   </a>
+  <img src="https://komarev.com/ghpvc/?username=okHadi&style=flat-square&color=blue" alt=""/>
+
 </div>
 
-<img src="https://komarev.com/ghpvc/?username=okHadi&style=flat-square&color=blue" alt=""/>
 
 ### :man_technologist: About Me :
 
