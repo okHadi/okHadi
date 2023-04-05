@@ -1,7 +1,3 @@
-<div id="header" align="center">
-  <img src="https://media.giphy.com/media/scZPhLqaVOM1qG4lT9/giphy.gif" align="center"/>
-</div>
-
 # 💫 About Me:
 I am a backend developer from Pakistan 🇵🇰<br>Working on web-based applications <br>Interested in DevOps and Automation ⚙️
 
