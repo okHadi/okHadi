@@ -17,5 +17,6 @@
         </tr>
         <tr>
             <td><a href="https://github.com/okHadi/vostro14-hackintosh-efi">vostro14-efi</a> - Opencore EFI for Dell Vostro 14 hackintosh </td>
+            <td><a href="https://github.com/okHadi/decryptor">Decryptor</a> - Make crypto price predictions in C </td>
     </table>
 </div>
