@@ -12,13 +12,14 @@ permissions:
   packages: write
   contents: write
 
+defaults:
+  run:
+    working-directory: ./site
+
 jobs:
   buildAndTestSite:
     name: Build and Test Site
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./site
     if: github.event_name == 'pull_request'
 
     steps:
@@ -39,9 +40,6 @@ jobs:
   buildAndDeploySite:
     name: Prod Build and Deploy Site
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./site
     if: github.event_name == 'workflow_dispatch' || ( github.event_name == 'push' && github.ref == 'refs/heads/main' )
     outputs:
       deployment-url: ${{ steps.deployProduction.outputs.deployment-url }}
