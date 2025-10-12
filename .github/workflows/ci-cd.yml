@@ -42,7 +42,7 @@ jobs:
     defaults:
       run:
         working-directory: ./site
-    if: github.event_name == 'workflow_dispatch'
+    if: github.event_name == 'workflow_dispatch' || ( github.event_name == 'push' && github.ref == 'refs/heads/main' )
     outputs:
       deployment-url: ${{ steps.deployProduction.outputs.deployment-url }}
     steps:
