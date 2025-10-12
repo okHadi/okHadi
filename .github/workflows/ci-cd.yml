@@ -1,0 +1,68 @@
+name: Deploy to Cloudflare
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  packages: write
+  contents: write
+
+jobs:
+  buildAndTestSite:
+    name: Build and Test Site
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./site
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build application
+        run: yarn run build
+
+  buildAndDeploySite:
+    name: Prod Build and Deploy Site
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./site
+    if: github.event_name == 'workflow_dispatch'
+    outputs:
+      deployment-url: ${{ steps.deployProduction.outputs.deployment-url }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build application
+        run: yarn run build
+
+      - name: Deploy to cloudflare
+        id: deployProduction
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: deploy

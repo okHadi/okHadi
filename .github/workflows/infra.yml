@@ -1,0 +1,71 @@
+name: Infra CI/CD
+on:
+    push:
+        branches:
+            - main
+        paths:
+            - "infra/**"
+    pull_request:
+        branches:
+            - main
+        paths:
+            - "infra/**"
+    workflow_dispatch:
+        inputs:
+            apply:
+                description: "Apply changes"
+                required: true
+                default: "false"
+
+env:
+    CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
+    AWS_ACCESS_KEY_ID: ${{ secrets.CLOUDFLARE_AWS_ACCESS_KEY_ID }}
+    AWS_SECRET_ACCESS_KEY: ${{ secrets.CLOUDFLARE_AWS_SECRET_ACCESS_KEY }}
+    TF_VAR_CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
+
+jobs:
+    TerraformPlan:
+        name: Plan Preview
+        if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v4
+
+            - name: Setup terraform
+              uses: hashicorp/setup-terraform@v2
+
+            - name: Terraform Init
+              run: |
+                  terraform init
+
+            - name: Format Terraform files
+              run: |
+                  terraform fmt -check
+
+            - name: Validate Terraform files
+              run: |
+                  terraform validate
+
+            - name: Terraform Plan
+              run: |
+                  terraform plan
+
+    TerraformApply:
+        name: Apply Preview
+        if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.event.inputs.apply == 'true')
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v4
+
+            - name: Setup terraform
+              uses: hashicorp/setup-terraform@v2
+
+            - name: Terraform Init
+              run: |
+                  terraform init
+
+            - name: Terraform Apply
+              run: |
+                  terraform apply --auto-approve
