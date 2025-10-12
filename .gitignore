@@ -45,3 +45,4 @@ CV/*.pdf
 .bak 
 .mtc
 build/
+.terraform
