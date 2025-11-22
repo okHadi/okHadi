@@ -8,7 +8,7 @@ url: 'https://parhlai.com/'
 ---
 
 - Founded and scaled Parhlai from an incubated project to a funded startup; lead a team of 4 engineers
-- Grew product to 200+ weekly active users and achieved consistent engagement growth
+- Grew product to 500+ weekly active users and achieved consistent engagement growth
 - Architected and developed the full backend, implemented async event-driven ML pipelines for MCQ generation and content moderation, and contributed to frontend features and deployments
 - Engineered and maintained a minimal-cost serverless infrastructure (AWS Lambda/Lambdalith, Cloudflare Workers, CloudFront/S3, Groq) with Terraform for multi-environment deployments
 - Automated CI/CD with GitHub Actions, managed project tracking via Jira/Confluence, and enforced access control with Firebase Auth and custom roles
