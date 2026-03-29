@@ -1,11 +1,9 @@
 %-------------------------
 % Resume in Latex
-% Author : Jake Gutierrez
-% Based off of: https://github.com/sb2nov/resume
-% License : MIT
+% Author : Jake Gutierrez (modified by Hadi Khan)
 %------------------------
 
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,10pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -20,179 +18,171 @@
 \usepackage{tabularx}
 \input{glyphtounicode}
 
-
-%----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% serif
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
-
-
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
+\fancyhf{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
+% Margins
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.8in}
-\addtolength{\textheight}{1.5in}
+\addtolength{\topmargin}{-.9in}
+\addtolength{\textheight}{1.6in}
+\setlength{\footskip}{4pt}
 
 \urlstyle{same}
-
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting
+% Section format
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
+  \vspace{-6pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
-%-------------------------
 % Custom commands
 \newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
+  \item\small{{#1 \vspace{-3pt}}}
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
+  \vspace{-4pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \small\textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+  \item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small#1 & #2 \\
+  \end{tabular*}\vspace{-9pt}
 }
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-7pt}}
 
 %-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \begin{document}
 
 %----------HEADING----------
 \begin{center}
-    \textbf{\Huge \scshape Hadi Khan} \\ \vspace{1pt}
-  \small +923156233633 $|$ \href{mailto:hello@mhadi.dev}{\underline{hello@mhadi.dev}} $|$
-  \href{https://www.linkedin.com/in/okhadi/}{\underline{linkedin.com/in/okHadi}} $|$
-  \href{https://www.mhadi.dev}{\underline{www.mhadi.dev}} $|$ \href{https://github.com/okHadi}{\underline{github.com/okHadi}}
+\textbf{\Huge \scshape Hadi Khan} \\ \vspace{1pt}
+\small +923156233633 $|$ 
+\href{mailto:hello@mhadi.dev}{\underline{hello@mhadi.dev}} $|$
+\href{https://www.linkedin.com/in/okhadi/}{\underline{linkedin.com/in/okHadi}} $|$
+\href{https://www.mhadi.dev}{\underline{www.mhadi.dev}} $|$
+\href{https://github.com/okHadi}{\underline{github.com/okHadi}}
 \end{center}
 
-%-----------PROGRAMMING SKILLS-----------
+%-----------SKILLS-----------
 \section{Technical Skills}
-  \begin{itemize}[leftmargin=0.15in, label={}]
-    \item \small{
-      \textbf{Languages}{: Python, TypeScript/Javascript, Bash} \\
-      \textbf{Libraries \& Tools}{: ExpressJS, Flask, React, Selenium, Postman, Git, Jira/Confluence } \\
-      \textbf{DevOps \& IaC}{: GitHub Actions, Datadog, AWS, Cloudflare, Docker, Terraform, Ansible, Vagrant} \\
-      }
-  \end{itemize}
+\begin{itemize}[leftmargin=0.15in, label={}]
+\item \small{
+\textbf{Languages}{: Python, TypeScript/Javascript, Bash} \\
+\textbf{Product \& AI}{: PostHog, Ahrefs, SEO, GTM Strategy, User Analytics, Mixpanel} \\
+\textbf{Libraries \& Tools}{: ExpressJS, Flask, React, Selenium, Postman, Git, Jira/Confluence/Linear} \\
+\textbf{DevOps \& IaC}{: GitHub Actions, Datadog, AWS, Cloudflare, Docker, Terraform, Ansible, Vagrant}
+}
+\end{itemize}\vspace{-10pt}
 
 %-----------EXPERIENCE-----------
 \section{Experience}
 
-  \resumeSubHeadingListStart
+\resumeSubHeadingListStart
 
-    \resumeSubheading
-      {Co Founder}{Mar 2024 -- Present}
-      {Parhlai}{Islamabad / Remote}
-      \resumeItemListStart
-        \resumeItem{Founded and scaled Parhlai from an incubated project to a funded startup; lead a team of 4 engineers.}
-        \resumeItem{Grew product to 500+ weekly active users and achieved consistent engagement growth.}
-    \resumeItem{As CTO, architected and developed the full backend, implemented async event-driven ML pipelines for MCQ generation and content moderation, and contributed to frontend features and deployments.}
-    \resumeItem{Engineered and maintained a minimal-cost serverless infrastructure (AWS Lambda/Lambdalith, Cloudflare Workers, CloudFront/S3, Groq) with Terraform for multi-environment deployments; operational tech/infrastructure costs were ~1\% of total running costs while the majority of spend was on marketing and user acquisition.}
-    \resumeItem{Automated CI/CD with GitHub Actions, managed project tracking via Jira/Confluence, and enforced access control with Firebase Auth and custom roles.}
-    \resumeItem{Built an in-product chatbot using Cloudflare Workers, Groq (BYOK), Durable Objects, and Cloudflare KV to handle sessions, embeddings, and low-latency inference.}
-    \resumeItem{Won multiple hackathons, competitions and grants while leading the team.}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
+\resumeSubheading
+{AI Product Manager}{December 2025 -- Present}
+{Chatly / Vyro.ai}{Islamabad, On Site}
+\resumeItemListStart
+\resumeItem{Independently built and launched Chatly's AI Chrome extension in 2 weeks using Claude, acquiring 1,200+ organic users immediately post-launch.}
+\resumeItem{Owned the product lifecycle for the "AI Slides" feature, from ideation to launch, driving 1,000+ users immediately post-launch through rapid iteration and user-focused design.}
+\resumeItem{Improved AI Image Generation ratings by 50\% through prompt and UX iteration.}
+\resumeItem{Automated internal workflows like invoicing, template updates, and review tracking to improve team velocity.}
+\resumeItemListEnd
 
-  \resumeSubHeadingListStart
+\resumeSubheading
+{Co-Founder \& CTO}{Mar 2024 -- Present}
+{Parhlai}{Islamabad / Remote}
+\resumeItemListStart
+\resumeItem{Founded and scaled an ed-tech platform, securing ~1M PKR in funding and generating 100K+ PKR in organic revenue.}
+\resumeItem{Led product strategy and roadmap execution, aligning engineering efforts with growth and user engagement goals.}
+\resumeItem{Championed an AI-first engineering culture, leveraging AI tools to accelerate development with a lean team of 2 engineers.}
+\resumeItem{Executed GTM strategies using Reddit and referral programs, driving user acquisition without paid ads.}
+\resumeItem{Ranked key features at \#3 in search results within 2 weeks using Ahrefs and SEO optimization.}
+\resumeItem{Implemented PostHog analytics to track user journeys, inform feature prioritization, and optimize retention.}
+\resumeItem{Maintained technical oversight, architecting a multi-cloud serverless AWS/Cloudflare backend with ~1\% infrastructure cost.}
+\resumeItemListEnd
 
-    \resumeSubheading
-      {Backend and DevOps Engineer}{June 2021 -- Present}
-      {Syslify}{UK, Remote}
-      \resumeItemListStart
-        \resumeItem{Built backends for two e-commerce platforms using TypeScript, Express, and MongoDB with Firebase JWT authentication.}
-        \resumeItem{Implemented Firebase Custom Roles to power admin dashboards for data and user management.}
-        \resumeItem{Published static React sites to CloudFront/S3 and deployed GKE services via Helm and GitLab CI.}
-        \resumeItem{Containerized apps and created CI/CD pipelines with GitHub Actions for tests, builds, and automated deployments.}
-        \resumeItem{Migrated legacy stacks to Terraform-based IaC, managing AWS, GCP, Cloudflare and GitHub infrastructure as code.}
-        \resumeItem{Reduced CI costs ~90\% by running self-hosted GitHub runners on AWS Fargate and optimizing Docker layer caching.}
-        \resumeItem{Implemented blue/green releases on ECS Fargate using CloudFormation, CodePipeline, and CodeDeploy.}
-  \resumeItem{Implemented SSO using Microsoft Entra ID for the organisation and improved RBAC, CloudFront/WAF, and secret handling via GitHub Environments.}
-  \resumeItem{Improved AWS Security Hub score from ~60\% to ~80\% for an organisation by remediating findings and tuning controls.}
-  \resumeItem{Managed and tuned an OpenSearch cluster for production search workloads.}
-        \resumeItem{Rightsized EC2 and other non-production instances, cutting costs by ~70\% while maintaining test fidelity.}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
-  \resumeSubHeadingListStart
 
-    \resumeSubheading
-      {Assc. Software Engineer}{Nov 2023 -- Sept 2024}
-      {Vfairs}{Lahore, Remote, Part time}
-      \resumeItemListStart
-        \resumeItem{Developed and improved 40+ job scrapers using Selenium and Scrapy, increasing data fetched by 50\%.}
-                \resumeItem{Configured and developed load tests for multiple applications using Artillery.io, K6, and Flood, simulating up to 10,000 users.}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
+\resumeSubheading
+{Backend and DevOps Engineer}{June 2021 -- December 2025}
+{Syslify}{UK, Remote}
+\resumeItemListStart
+\resumeItem{Led backend and infrastructure development for multiple production systems, collaborating with stakeholders to translate business requirements into scalable technical solutions.}
+\resumeItem{Built and maintained backends for two e-commerce platforms using TypeScript, Express, and MongoDB, supporting end-to-end data and user management.}
+\resumeItem{Migrated legacy stacks to Terraform-based IaC, managing AWS, GCP, Cloudflare, and GitHub infrastructure with improved reliability and reproducibility.}
+\resumeItem{Designed and implemented CI/CD pipelines using GitHub Actions, enabling automated testing, builds, and deployments across environments.}
+\resumeItem{Reduced CI costs by ~90\% through self-hosted runners on AWS Fargate and optimized Docker layer caching strategies.}
+\resumeItem{Implemented blue/green deployments and improved release workflows, increasing system stability and reducing downtime during production releases.}
+\resumeItem{Improved security posture by implementing SSO (Microsoft Entra ID), strengthening RBAC, and enhancing secret management practices.}
+\resumeItem{Optimized infrastructure usage by rightsizing EC2 and non-production environments, reducing costs by ~70\% while maintaining performance.}
+\resumeItem{Managed and tuned OpenSearch clusters for production workloads, improving search performance and reliability.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Associate Software Engineer}{Nov 2023 -- Sept 2024}
+{Vfairs}{Lahore, Remote, Part time}
+\resumeItemListStart
+\resumeItem{Configured and executed load tests simulating up to 10,000 concurrent users to ensure system stability.}
+\resumeItem{Developed and optimized 40+ job scrapers, increasing data acquisition by 50\%.}
+\resumeItemListEnd
+
+
+\resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------
 \section{Projects}
-    \resumeSubHeadingListStart
-      \resumeProjectHeading
-        {\textbf{AWS WAF Manager} $|$ \emph{React, AWS, Bash, Github Actions}}{}
-          \resumeItemListStart
-            \resumeItem{React (CF/S3) website to show and manage banned IPs via AWS WAF.}
-          \resumeItemListEnd
-      \resumeProjectHeading
-        {\textbf{Docker Services Status} $|$ \emph{HTML, Docker, Python, Flask, Bash}}{}
-          \resumeItemListStart
-            \resumeItem{Dockerized flask application to monitor dockerized microservices in other servers.}
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\textbf{Tashreeh.org} $|$ \emph{React, NextJs, Data Pipelines, OCR}}{}
+\resumeItemListStart
+\resumeItem{Led the end-to-end development of a web platform dedicated to reading and understanding Urdu poetry, taking full ownership of the product vision, UI/UX design, and core architecture.}
+\resumeItem{Engineered a data pipeline using multiple models to process scanned Urdu literature books into a searchable SQL database.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{Finasaan} $|$ \emph{NextJS, AI/ML, Web Scraping, Cloudflare}}{}
+\resumeItemListStart
+\resumeItem{Built a financial literacy platform for Pakistan with AI-powered guidance for investing, insurance, and tax filing, integrating real-time market data (KSE-100, mutual funds, gold prices).}
+\resumeItem{Developed the full agentic chatbot independently and acquired 100+ waitlist signups through product validation and launch positioning.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{AWS WAF Manager} $|$ \emph{React, AWS, Bash, GitHub Actions}}{}
+\resumeItemListStart
+\resumeItem{Built an operational tool to manage banned IPs and monitor security rules in AWS WAF, streamlining a previously cumbersome workflow.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------
 \section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {National University of Science and Technology}{Islamabad, Pakistan}
-      {Bachelor of Science in Computer Science}{Aug. 2022 -- May 2026}
-  \resumeSubHeadingListEnd
+\resumeSubHeadingListStart
+\resumeSubheading
+{National University of Science and Technology}{Islamabad, Pakistan}
+{Bachelor of Science in Computer Science}{}
+\resumeSubHeadingListEnd
 
 \end{document}

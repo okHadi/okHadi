@@ -256,18 +256,15 @@ const StyledProject = styled.li`
     a {
       width: 100%;
       height: 100%;
-      background-color: var(--green);
+      background-color: transparent;
       border-radius: var(--border-radius);
       vertical-align: middle;
 
       &:hover,
       &:focus {
-        background: transparent;
         outline: 0;
 
-        &:before,
         .img {
-          background: transparent;
           filter: none;
         }
       }
@@ -283,21 +280,26 @@ const StyledProject = styled.li`
         bottom: 0;
         z-index: 3;
         transition: var(--transition);
-        background-color: var(--navy);
-        mix-blend-mode: screen;
+        background-color: rgba(12, 12, 12, 0.3);
+        mix-blend-mode: normal;
+      }
+
+      &:hover:before,
+      &:focus:before {
+        background-color: transparent;
       }
     }
 
     .img {
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1) brightness(90%);
+      filter: grayscale(60%) contrast(1) brightness(85%);
+      transition: var(--transition);
 
       @media (max-width: 768px) {
         object-fit: cover;
         width: auto;
         height: 100%;
-        filter: grayscale(100%) contrast(1) brightness(50%);
+        filter: grayscale(100%) contrast(1) brightness(40%);
       }
     }
   }

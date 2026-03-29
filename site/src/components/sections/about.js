@@ -36,12 +36,12 @@ const StyledText = styled.div`
       font-size: var(--fz-xs);
 
       &:before {
-        content: '▹';
+        content: '//';
         position: absolute;
         left: 0;
         color: var(--green);
-        font-size: var(--fz-sm);
-        line-height: 12px;
+        font-size: var(--fz-xs);
+        font-weight: 700;
       }
     }
   }
@@ -61,7 +61,7 @@ const StyledPic = styled.div`
     position: relative;
     width: 100%;
     border-radius: var(--border-radius);
-    background-color: var(--green);
+    background-color: var(--lightest-navy);
 
     &:hover,
     &:focus {
@@ -81,8 +81,7 @@ const StyledPic = styled.div`
     .img {
       position: relative;
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1);
+      filter: grayscale(100%) contrast(1.1);
       transition: var(--transition);
     }
 
@@ -137,7 +136,7 @@ const About = () => {
     'Docker',
     'GitHub Actions',
     'Cloudflare',
-    'Selenium',
+    'Prompt Engineering',
   ];
 
   return (
@@ -148,32 +147,37 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! I'm Hadi, a software engineer passionate about building scalable backend
-              systems and cloud infrastructure. My journey in tech started with trying to build a malware in 2019, and now I build all types of software!
+              Hey — I'm Hadi. I started in tech by trying to write malware in 2019.
+              That didn't work out, but it sparked something. Since then, I've been building
+              backends, shipping products, and scaling infrastructure.
             </p>
 
             <p>
-              Today, I'm co-founding{' '}
-              <a href="https://parhlai.com/">Parhlai</a>, and working with{' '}
-              <a href="https://syslify.com/">Syslify</a> for clients all accross the globe.
-              I specialize in DevOps, Infrastructure as Code, and backend
-              development - with a focus on FinOps.
+              Right now, I'm wearing a couple of hats: AI Product Manager at{' '}
+              <a href="https://vyro.ai/">Vyro.ai</a> where I ship AI-powered products like Chrome
+              extensions and presentation tools, and co-founding{' '}
+              <a href="https://parhlai.com/">Parhlai</a> (Pakistan's first AI-powered ed-tech
+              for university entry tests). Previously, I spent 3+ years building cloud
+              infrastructure at{' '}
+              <a href="https://syslify.com/">Syslify</a> for clients worldwide.
             </p>
 
-            {/* <p>
-              Currently, I'm leading the engineering team at Parhlai, where we've built a complete
-              serverless infrastructure on AWS with operational tech costs at just ~1% of our total
-              running costs. I'm also pursuing my Bachelor's in Computer Science at{' '}
+            <p>
+              I care about building things that actually work — lean, fast, and cost-effective.
+              At Parhlai, our entire serverless infrastructure runs at ~1% of total costs.
+              I'm also pursuing my CS degree at{' '}
               <a href="https://nust.edu.pk/">NUST</a>.
-            </p> */}
+            </p>
 
-            <p>Here are a few technologies I've worked with:</p>
+            <p>Technologies I work with:</p>
           </div>
 
           <ul className="skills-list">
             {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
           </ul>
-        </StyledText>        <StyledPic>
+        </StyledText>
+
+        <StyledPic>
           <div className="wrapper">
             <StaticImage
               className="img"

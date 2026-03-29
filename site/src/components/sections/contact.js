@@ -33,6 +33,11 @@ const StyledContactSection = styled.section`
 
   .title {
     font-size: clamp(40px, 5vw, 60px);
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    line-height: 1.6;
   }
 
   .email-link {
@@ -55,12 +60,13 @@ const Contact = () => {
 
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
-      <h2 className="numbered-heading overline">What’s Next?</h2>
+      <h2 className="numbered-heading overline">What's Next?</h2>
 
-      <h2 className="title">Get In Touch</h2>
+      <h2 className="title">Let's Talk</h2>
 
       <p>
-        Got something for me? Whether it's a question, project idea, a job offer, or just to say hi, my inbox is always open. I'll try my best to get back to you!
+        Whether you have a project idea, a role that fits, or just want to say hi — I'm always
+        up for a conversation. Drop me a line and I'll get back to you.
       </p>
 
       <a className="email-link" href={`mailto:${email}`}>
