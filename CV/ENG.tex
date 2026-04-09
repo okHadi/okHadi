@@ -113,13 +113,10 @@
 {Co-Founder \& CTO}{Mar 2024 -- Present}
 {Parhlai}{Islamabad / Remote}
 \resumeItemListStart
-\resumeItem{Founded and scaled Parhlai from an incubated project to a funded startup, raising ~1M PKR in funding and generating 100K+ PKR in organic revenue; led a team of 4 engineers.}
-\resumeItem{Grew the platform to 1,000+ monthly active users with consistent engagement growth; won multiple hackathons, competitions, and grants.}
-\resumeItem{As CTO, architected and developed the full backend: serverless AWS infrastructure (Lambda/Lambdalith, CloudFront, S3) and Cloudflare (Workers, Durable Objects, KV), with Terraform for multi-environment deployments — tech/infrastructure costs were approximately 1\% of total spend.}
-\resumeItem{Built an end-to-end MCQ generation pipeline: PDF ingestion via EasyOCR + YOLOv12 layout detection, semantic embeddings in Pinecone, and rote/conceptual/numerical question generation using Groq and Gemini across 4 exam configurations.}
-\resumeItem{Implemented a multi-agent validation system for structural, conceptual, and distractor-quality checks, with DPP-based diversity sampling and a cross-run memory store to prevent question repetition.}
-\resumeItem{Developed an in-product conversational chatbot using Cloudflare Workers, Groq (BYOK), Durable Objects, and KV for low-latency inference and session persistence.}
-\resumeItem{Automated CI/CD with GitHub Actions; enforced access control with Firebase Auth and custom roles; managed project tracking via Jira/Confluence.}
+\resumeItem{Founded Parhlai from incubation to funded startup — raised ~1M PKR, generated 100K+ PKR in organic revenue, grew to 1,000+ MAU, and won multiple hackathons and grants; led a team of 4 engineers.}
+\resumeItem{Architected the full backend: serverless AWS (Lambda, CloudFront, S3) and Cloudflare (Workers, Durable Objects, KV) with Terraform for multi-environment deployments — infrastructure cost ~1\% of total spend.}
+\resumeItem{Built an end-to-end MCQ generation pipeline (EasyOCR + YOLOv12 ingestion, Pinecone embeddings, Groq/Gemini generation) with a multi-agent validation system and DPP diversity sampling across 4 exam configurations.}
+\resumeItem{Developed an in-product chatbot using Cloudflare Workers, Groq (BYOK), Durable Objects, and KV for low-latency inference and session persistence.}
 \resumeItemListEnd
 
 
@@ -127,15 +124,16 @@
 {Backend and DevOps Engineer}{June 2021 -- December 2025}
 {Syslify}{UK, Remote}
 \resumeItemListStart
-\resumeItem{Built and maintained backends for two e-commerce platforms using TypeScript, Express, and MongoDB, supporting end-to-end data and user management.}
-\resumeItem{Migrated legacy stacks to Terraform-based IaC, managing AWS, GCP, Cloudflare, and GitHub infrastructure with improved reliability and reproducibility.}
-\resumeItem{Designed and implemented CI/CD pipelines using GitHub Actions, enabling automated testing, builds, and deployments across environments.}
-\resumeItem{Reduced CI costs by ~90\% through self-hosted runners on AWS Fargate and optimized Docker layer caching strategies.}
-\resumeItem{Implemented blue/green deployments and improved release workflows, increasing system stability and reducing downtime during production releases.}
-\resumeItem{Improved security posture by implementing SSO (Microsoft Entra ID), strengthening RBAC, and enhancing secret management practices.}
-\resumeItem{Improved AWS Security Hub score from ~60\% to ~80\% by remediating findings across IAM, networking, and compute.}
-\resumeItem{Optimized infrastructure usage by rightsizing EC2 and non-production environments, reducing costs by ~70\% while maintaining performance.}
-\resumeItem{Managed and tuned OpenSearch clusters for production workloads, improving search performance and reliability.}
+\resumeItem{Developed and deployed multi-stage Dockerized Flask and Express applications across serverless (AWS Lambda/Lambdalith) and managed (ECS Fargate, EC2) infrastructure for multiple production systems.}
+\resumeItem{Migrated CodeCommit, CodePipeline, and manual infrastructure to GitHub + Terraform IaC for multi-million-dollar startup clients, managing AWS, GCP, Cloudflare, and GitHub resources.}
+\resumeItem{Built and optimized CI/CD pipelines across GitHub Actions and GitLab CI with Docker layer caching; provisioned self-hosted runners on AWS Fargate, cutting costs by ~90\%; automated on-demand ops (DB modifications, WAF updates, state lock removal) via GitHub Actions.}
+\resumeItem{Implemented blue/green deployments on ECS Fargate via CloudFormation, CodePipeline, and CodeDeploy; designed a hotfix strategy enabling rapid production fixes bypassing status checks.}
+\resumeItem{Hardened access controls: SSO (Microsoft Entra ID), RBAC, GitHub Environments for secret scoping, temporary pipeline credentials, and Firebase Auth with custom admin roles.}
+\resumeItem{Built observability stack: Bash/Python monitoring scripts with Slack and PagerDuty alerts; deployed Datadog agents on EC2 and ECS Fargate for ElastiCache and service-level monitoring — improving incident detection by 50\%.}
+\resumeItem{Configured CloudFront + AWS WAF to secure development endpoints; automated WAF access list updates and DNS management via Terraform and GitHub Actions.}
+\resumeItem{Developed disaster recovery plans: multi-region RDS snapshot replication and Cognito user pool backups for high availability.}
+\resumeItem{Deployed static React sites via CloudFront + S3 and Cloudflare Pages; improved AWS Security Hub from ~60\% to ~80\% and reduced infrastructure costs by ~70\% through EC2 rightsizing.}
+\resumeItem{Managed and tuned OpenSearch clusters for production search workloads.}
 \resumeItemListEnd
 
 \resumeSubheading
