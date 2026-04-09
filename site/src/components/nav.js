@@ -205,8 +205,12 @@ const Nav = ({ isHome }) => {
     </div>
   );
 
-  const ResumeLink = (
-    <a className="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+  const ResumeDropdown = (
+    <a
+      className="resume-button"
+      href="/resume-eng.pdf"
+      download="HadiKhan_resume_engineering.pdf"
+      rel="noopener noreferrer">
       Resume
     </a>
   );
@@ -227,7 +231,7 @@ const Nav = ({ isHome }) => {
                     </li>
                   ))}
               </ol>
-              <div>{ResumeLink}</div>
+              <div>{ResumeDropdown}</div>
             </StyledLinks>
 
             <Menu />
@@ -261,7 +265,7 @@ const Nav = ({ isHome }) => {
                 {isMounted && (
                   <CSSTransition classNames={fadeDownClass} timeout={timeout}>
                     <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
-                      {ResumeLink}
+                      {ResumeDropdown}
                     </div>
                   </CSSTransition>
                 )}

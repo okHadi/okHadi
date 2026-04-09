@@ -78,7 +78,7 @@
 %----------HEADING----------
 \begin{center}
 \textbf{\Huge \scshape Hadi Khan} \\ \vspace{1pt}
-\small +923156233633 $|$ 
+\small +923156233633 $|$
 \href{mailto:hello@mhadi.dev}{\underline{hello@mhadi.dev}} $|$
 \href{https://www.linkedin.com/in/okhadi/}{\underline{linkedin.com/in/okHadi}} $|$
 \href{https://www.mhadi.dev}{\underline{www.mhadi.dev}} $|$
@@ -89,10 +89,10 @@
 \section{Technical Skills}
 \begin{itemize}[leftmargin=0.15in, label={}]
 \item \small{
-\textbf{Languages}{: Python, TypeScript/Javascript, Bash} \\
-\textbf{Product \& AI}{: PostHog, Ahrefs, SEO, GTM Strategy, User Analytics, Mixpanel} \\
-\textbf{Libraries \& Tools}{: ExpressJS, Flask, React, Selenium, Postman, Git, Jira/Confluence/Linear} \\
-\textbf{DevOps \& IaC}{: GitHub Actions, Datadog, AWS, Cloudflare, Docker, Terraform, Ansible, Vagrant}
+\textbf{Languages}{: Python, TypeScript/JavaScript, Bash} \\
+\textbf{Frameworks \& Libraries}{: ExpressJS, Flask, React, Selenium} \\
+\textbf{Infra \& DevOps}{: AWS, Cloudflare, Docker, Terraform, Ansible, Vagrant, GitHub Actions, Datadog} \\
+\textbf{Tools}{: Git, Postman}
 }
 \end{itemize}\vspace{-10pt}
 
@@ -105,23 +105,21 @@
 {AI Product Manager}{December 2025 -- Present}
 {Chatly / Vyro.ai}{Islamabad, On Site}
 \resumeItemListStart
-\resumeItem{Independently built and launched Chatly's AI Chrome extension in 2 weeks using Claude, acquiring 1,200+ organic users immediately post-launch.}
-\resumeItem{Owned the product lifecycle for the "AI Slides" feature, from ideation to launch, driving 1,000+ users immediately post-launch through rapid iteration and user-focused design.}
-\resumeItem{Improved AI Image Generation ratings by 50\% through prompt and UX iteration.}
-\resumeItem{Automated internal workflows like invoicing, template updates, and review tracking to improve team velocity.}
+\resumeItem{Independently built and launched Chatly's AI Chrome extension in 2 weeks — featuring an AI chat assistant, AI-powered slide generation, and AI image generation — acquiring 2,000+ organic users immediately post-launch.}
+\resumeItem{Automated vendor invoicing management through serverless functions, reducing a process that previously took hours to under a few minutes.}
 \resumeItemListEnd
 
 \resumeSubheading
 {Co-Founder \& CTO}{Mar 2024 -- Present}
 {Parhlai}{Islamabad / Remote}
 \resumeItemListStart
-\resumeItem{Founded and scaled an ed-tech platform, securing ~1M PKR in funding and generating 100K+ PKR in organic revenue.}
-\resumeItem{Led product strategy and roadmap execution, aligning engineering efforts with growth and user engagement goals.}
-\resumeItem{Championed an AI-first engineering culture, leveraging AI tools to accelerate development with a lean team of 2 engineers.}
-\resumeItem{Executed GTM strategies using Reddit and referral programs, driving user acquisition without paid ads.}
-\resumeItem{Ranked key features at \#3 in search results within 2 weeks using Ahrefs and SEO optimization.}
-\resumeItem{Implemented PostHog analytics to track user journeys, inform feature prioritization, and optimize retention.}
-\resumeItem{Maintained technical oversight, architecting a multi-cloud serverless AWS/Cloudflare backend with ~1\% infrastructure cost.}
+\resumeItem{Founded and scaled Parhlai from an incubated project to a funded startup, raising ~1M PKR in funding and generating 100K+ PKR in organic revenue; led a team of 4 engineers.}
+\resumeItem{Grew the platform to 1,000+ monthly active users with consistent engagement growth; won multiple hackathons, competitions, and grants.}
+\resumeItem{As CTO, architected and developed the full backend: serverless AWS infrastructure (Lambda/Lambdalith, CloudFront, S3) and Cloudflare (Workers, Durable Objects, KV), with Terraform for multi-environment deployments — tech/infrastructure costs were approximately 1\% of total spend.}
+\resumeItem{Built an end-to-end MCQ generation pipeline: PDF ingestion via EasyOCR + YOLOv12 layout detection, semantic embeddings in Pinecone, and rote/conceptual/numerical question generation using Groq and Gemini across 4 exam configurations.}
+\resumeItem{Implemented a multi-agent validation system for structural, conceptual, and distractor-quality checks, with DPP-based diversity sampling and a cross-run memory store to prevent question repetition.}
+\resumeItem{Developed an in-product conversational chatbot using Cloudflare Workers, Groq (BYOK), Durable Objects, and KV for low-latency inference and session persistence.}
+\resumeItem{Automated CI/CD with GitHub Actions; enforced access control with Firebase Auth and custom roles; managed project tracking via Jira/Confluence.}
 \resumeItemListEnd
 
 
@@ -135,6 +133,7 @@
 \resumeItem{Reduced CI costs by ~90\% through self-hosted runners on AWS Fargate and optimized Docker layer caching strategies.}
 \resumeItem{Implemented blue/green deployments and improved release workflows, increasing system stability and reducing downtime during production releases.}
 \resumeItem{Improved security posture by implementing SSO (Microsoft Entra ID), strengthening RBAC, and enhancing secret management practices.}
+\resumeItem{Improved AWS Security Hub score from ~60\% to ~80\% by remediating findings across IAM, networking, and compute.}
 \resumeItem{Optimized infrastructure usage by rightsizing EC2 and non-production environments, reducing costs by ~70\% while maintaining performance.}
 \resumeItem{Managed and tuned OpenSearch clusters for production workloads, improving search performance and reliability.}
 \resumeItemListEnd
@@ -145,6 +144,7 @@
 \resumeItemListStart
 \resumeItem{Configured and executed load tests simulating up to 10,000 concurrent users to ensure system stability.}
 \resumeItem{Developed and optimized 40+ job scrapers, increasing data acquisition by 50\%.}
+\resumeItem{Designed and provisioned ephemeral QA environments on AWS ECS triggered by pull requests, enabling parallel testing across a team of 50+ developers.}
 \resumeItemListEnd
 
 
@@ -155,23 +155,10 @@
 \resumeSubHeadingListStart
 
 \resumeProjectHeading
-{\textbf{Tashreeh.org} $|$ \emph{React, NextJs, Data Pipelines, OCR}}{}
-\resumeItemListStart
-\resumeItem{Led the end-to-end development of a web platform dedicated to reading and understanding Urdu poetry, taking full ownership of the product vision, UI/UX design, and core architecture.}
-\resumeItem{Engineered a data pipeline using multiple models to process scanned Urdu literature books into a searchable SQL database.}
-\resumeItemListEnd
-
-\resumeProjectHeading
 {\textbf{Finasaan} $|$ \emph{NextJS, AI/ML, Web Scraping, Cloudflare}}{}
 \resumeItemListStart
 \resumeItem{Built a financial literacy platform for Pakistan with AI-powered guidance for investing, insurance, and tax filing, integrating real-time market data (KSE-100, mutual funds, gold prices).}
 \resumeItem{Developed the full agentic chatbot independently and acquired 100+ waitlist signups through product validation and launch positioning.}
-\resumeItemListEnd
-
-\resumeProjectHeading
-{\textbf{AWS WAF Manager} $|$ \emph{React, AWS, Bash, GitHub Actions}}{}
-\resumeItemListStart
-\resumeItem{Built an operational tool to manage banned IPs and monitor security rules in AWS WAF, streamlining a previously cumbersome workflow.}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd

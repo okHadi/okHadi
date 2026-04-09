@@ -26,6 +26,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Compile LaTeX CVs to PDF
+        working-directory: .
+        run: |
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-base texlive-fonts-recommended texlive-latex-extra
+          cd CV
+          pdflatex -interaction=nonstopmode ENG.tex
+          pdflatex -interaction=nonstopmode ENG.tex
+          pdflatex -interaction=nonstopmode PM.tex
+          pdflatex -interaction=nonstopmode PM.tex
+          cp ENG.pdf ../site/static/resume-eng.pdf
+          cp PM.pdf ../site/static/resume-pm.pdf
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -46,6 +59,19 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Compile LaTeX CVs to PDF
+        working-directory: .
+        run: |
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-base texlive-fonts-recommended texlive-latex-extra
+          cd CV
+          pdflatex -interaction=nonstopmode ENG.tex
+          pdflatex -interaction=nonstopmode ENG.tex
+          pdflatex -interaction=nonstopmode PM.tex
+          pdflatex -interaction=nonstopmode PM.tex
+          cp ENG.pdf ../site/static/resume-eng.pdf
+          cp PM.pdf ../site/static/resume-pm.pdf
 
       - name: Set up Node.js
         uses: actions/setup-node@v4

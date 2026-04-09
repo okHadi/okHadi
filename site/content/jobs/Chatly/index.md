@@ -2,7 +2,7 @@
 date: '2025-12-01'
 title: 'AI Product Manager'
 company: 'Chatly / Vyro.ai'
-location: 'Remote'
+location: 'Islamabad, PK'
 range: 'Dec 2025 - Present'
 url: 'https://vyro.ai/'
 ---
