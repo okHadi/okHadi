@@ -267,8 +267,8 @@ const Menu = () => {
             )}
 
             <a
-              href="/resume-eng.pdf"
-              download="HadiKhan_resume_engineering.pdf"
+              href="/HadiKhan_resume_engineering.pdf"
+              target="_blank"
               className="resume-link"
               rel="noopener noreferrer">
               Resume

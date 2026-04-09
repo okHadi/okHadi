@@ -208,8 +208,8 @@ const Nav = ({ isHome }) => {
   const ResumeDropdown = (
     <a
       className="resume-button"
-      href="/resume-eng.pdf"
-      download="HadiKhan_resume_engineering.pdf"
+      href="/HadiKhan_resume_engineering.pdf"
+      target="_blank"
       rel="noopener noreferrer">
       Resume
     </a>

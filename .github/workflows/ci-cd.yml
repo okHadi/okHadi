@@ -36,7 +36,7 @@ jobs:
           pdflatex -interaction=nonstopmode ENG.tex
           pdflatex -interaction=nonstopmode PM.tex
           pdflatex -interaction=nonstopmode PM.tex
-          cp ENG.pdf ../site/static/resume-eng.pdf
+          cp ENG.pdf ../site/static/HadiKhan_resume_engineering.pdf
           cp PM.pdf ../site/static/resume-pm.pdf
 
       - name: Set up Node.js
@@ -70,7 +70,7 @@ jobs:
           pdflatex -interaction=nonstopmode ENG.tex
           pdflatex -interaction=nonstopmode PM.tex
           pdflatex -interaction=nonstopmode PM.tex
-          cp ENG.pdf ../site/static/resume-eng.pdf
+          cp ENG.pdf ../site/static/HadiKhan_resume_engineering.pdf
           cp PM.pdf ../site/static/resume-pm.pdf
 
       - name: Set up Node.js
