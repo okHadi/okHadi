@@ -1,6 +1,6 @@
 ---
 date: '2025-12-01'
-title: 'Assc. Product Manager (AI First)'
+title: 'Product Manager (AI First)'
 company: 'Imagine.art / Vyro.ai'
 location: 'Islamabad, PK'
 range: 'Dec 2025 - Present'

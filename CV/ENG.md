@@ -15,7 +15,7 @@
 
 ## Experience
 
-### Assc. Product Manager (AI First) — Imagine.art / Vyro.ai
+### Product Manager (AI First) — Imagine.art / Vyro.ai
 *December 2025 – Present | Islamabad, On Site*
 
 - Led OmniAgent end-to-end as the new AI core of ChatlyAI, scaling from 0 to 5,000 DAUs and 15,000+ organic generations; owned execution from architecture to growth and contributed production PRs alongside the engineering team.
