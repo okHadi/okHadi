@@ -7,8 +7,8 @@ range: 'Mar 2024 - Present'
 url: 'https://parhlai.com/'
 ---
 
-- Founded and scaled an ed-tech platform from incubation to a funded startup, securing ~1M PKR in funding and generating 100K+ PKR in organic revenue
-- Led product strategy and roadmap execution, aligning engineering efforts with growth and user engagement goals across a lean team of engineers
+- Founded and scaled an ed-tech platform from incubation to a funded startup, securing ~1M PKR in funding, generating 100K+ PKR in organic revenue, and growing to 4,000+ MAU
+- Led product strategy and roadmap execution, aligning engineering efforts with growth and user engagement goals across a lean team of 4 engineers
 - Championed an AI-first engineering culture, leveraging AI tools to accelerate development velocity
 - Executed GTM strategies using Reddit and referral programs, driving user acquisition without paid ads
 - Ranked key features at #3 in search results within 2 weeks using Ahrefs and SEO optimization
