@@ -81,11 +81,7 @@ const Hero = () => {
       <p>
         Software engineer, product builder, and startup co-founder. I work across the full stack
         — from backend systems and cloud infrastructure to shipping AI-powered products.
-        Currently building at{' '}
-        <a href="https://vyro.ai/" target="_blank" rel="noreferrer">
-          Vyro.ai
-        </a>{' '}
-        and co-founding{' '}
+        Currently co-founding{' '}
         <a href="https://parhlai.com/" target="_blank" rel="noreferrer">
           Parhlai
         </a>.

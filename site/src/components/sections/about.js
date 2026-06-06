@@ -153,13 +153,13 @@ const About = () => {
             </p>
 
             <p>
-              Right now, I'm wearing a couple of hats: AI Product Manager at{' '}
-              <a href="https://vyro.ai/">Vyro.ai</a> where I ship AI-powered products (like{' '}
-              <a href="https://chatly.ai/" target="_blank" rel="noopener noreferrer">Chatly.ai</a> and{' '}
-              <a href="https://imagine.art/" target="_blank" rel="noopener noreferrer">Imagine.art</a>), and co-founding{' '}
+              Right now, I'm co-founding{' '}
               <a href="https://parhlai.com/">Parhlai</a> (Pakistan's first AI-powered ed-tech
-              for university entry tests). Previously, I spent 3+ years building cloud
-              infrastructure at{' '}
+              for university entry tests). Most recently, I was an AI Product Manager at{' '}
+              <a href="https://vyro.ai/">Vyro.ai</a>, shipping AI-powered products like{' '}
+              <a href="https://chatly.ai/" target="_blank" rel="noopener noreferrer">Chatly.ai</a> and{' '}
+              <a href="https://imagine.art/" target="_blank" rel="noopener noreferrer">Imagine.art</a>.
+              Before that, I spent 3+ years building cloud infrastructure at{' '}
               <a href="https://syslify.com/">Syslify</a> for clients worldwide.
             </p>
 

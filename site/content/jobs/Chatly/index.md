@@ -3,7 +3,7 @@ date: '2025-12-01'
 title: 'Product Manager (AI First)'
 company: 'Imagine.art / Vyro.ai'
 location: 'Islamabad, PK'
-range: 'Dec 2025 - Present'
+range: 'Dec 2025 - Jun 2026'
 url: 'https://imagine.art/'
 ---
 
