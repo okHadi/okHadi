@@ -1,25 +1,26 @@
 ---
-date: '2024-01-01'
-title: 'Backend and DevOps Engineer'
+date: '2026-06-01'
+title: 'Senior DevOps Engineer'
 company: 'Syslify'
 location: 'UK, Remote'
-range: 'June 2021 - December 2025'
+range: 'June 2026 - Present; previously June 2021 - December 2025'
 url: 'https://syslify.com/'
 ---
 
-- Developed, maintained, and deployed multi-stage Dockerized Flask and Express applications across both serverless (AWS Lambda/Lambdalith) and managed (ECS Fargate, EC2) infrastructure for multiple production systems
-- Migrated CodeCommit, CodePipeline, and manual infrastructure to GitHub and Terraform-based IaC for multi-million-dollar startup clients, managing AWS, GCP, Cloudflare, and GitHub resources with improved reliability and reproducibility
-- Managed GitHub infrastructure with Terraform, ensuring granular permissions and secure, reproducible operations across environments
-- Designed and maintained CI/CD pipelines across GitHub Actions and GitLab CI, with Docker layer caching and build optimizations significantly reducing pipeline times
-- Provisioned self-hosted GitHub Actions runners on AWS Fargate, reducing CI costs by ~90%; automated on-demand operations (database modifications, WAF access list updates, state lock removal) via GitHub Actions workflows
-- Implemented blue/green deployments on ECS Fargate using CloudFormation, CodePipeline, and CodeDeploy; designed a hotfix strategy enabling rapid production fixes by selectively bypassing GitHub status checks
-- Implemented granular access to production secrets in GitHub Actions by configuring GitHub Environments, and migrated pipelines from long-lived keys to temporary credentials via OIDC
-- Implemented organization-wide SSO with Microsoft Entra ID for AWS services, strengthened RBAC, and configured Firebase Authentication with custom roles for admin-based access control
-- Built a custom observability stack: Bash and Python monitoring scripts with Slack and PagerDuty alerts; deployed Datadog agents on AWS EC2 and ECS Fargate to monitor services including ElastiCache — improving issue detection and response times by 50%
-- Configured CloudFront functions with AWS WAF to secure internal development endpoints with password-protected access, eliminating unauthorized access attempts; managed DNS and WAF configurations through Terraform
-- Developed disaster recovery plans including multi-region AWS RDS snapshot replication and Cognito user pool backups for high availability
-- Deployed static React sites using CloudFront + S3 and Cloudflare Pages for high availability and performance
-- Developed and deployed a Lambdalith ExpressTS application for serverless auto-scaling on AWS Lambda
-- Improved AWS Security Hub score from ~60% to ~80% by remediating findings across IAM, networking, and compute
-- Optimized infrastructure by rightsizing EC2 and non-production environments, reducing costs by ~70% while maintaining performance
-- Managed and tuned OpenSearch clusters for production search workloads, improving performance and reliability
+- **Senior DevOps Engineer (June 2026 - Present):** Built GitHub disaster recovery and AWS account backup workflows using AWS Control Tower Landing Zone
+- **Senior DevOps Engineer:** Enforced account-level tagging across 100+ AWS accounts through Terraform IaC
+- **Senior DevOps Engineer:** Led production Terraform module migrations and Red Hat OpenShift machine-pool upgrades
+- **Junior DevOps Engineer (2022 - 2025):** Migrated CodeCommit, CodePipeline, and manual infrastructure to GitHub and Terraform-based IaC, standardizing multi-cloud production environments across AWS, GCP, Cloudflare, and GitHub
+- **Junior DevOps Engineer:** Managed GitHub infrastructure with Terraform, including granular permissions and reproducible operations across environments
+- **Junior DevOps Engineer:** Designed GitHub Actions and GitLab CI pipelines with Docker layer caching and build optimizations
+- **Junior DevOps Engineer:** Provisioned self-hosted GitHub Actions runners on AWS Fargate, reducing CI costs by ~90%; automated database, WAF, and state-lock operations with GitHub Actions workflows
+- **Junior DevOps Engineer:** Implemented blue/green deployments on ECS Fargate with CloudFormation, CodePipeline, and CodeDeploy, including a rapid hotfix path
+- **Junior DevOps Engineer:** Configured GitHub Environments, OIDC temporary credentials, Microsoft Entra ID SSO, RBAC, and Firebase Authentication custom roles
+- **Junior DevOps Engineer:** Built Bash/Python monitoring, Slack/PagerDuty alerting, and Datadog observability across EC2 and ECS Fargate, improving issue detection and response times by 50%
+- **Junior DevOps Engineer:** Secured development endpoints with CloudFront Functions and AWS WAF; managed DNS and WAF configuration through Terraform
+- **Junior DevOps Engineer:** Built disaster recovery plans with multi-region RDS snapshot replication and Cognito user pool backups
+- **Junior DevOps Engineer:** Deployed React sites through CloudFront + S3 and Cloudflare Pages, and deployed a Lambdalith ExpressTS application on AWS Lambda
+- **Junior DevOps Engineer:** Improved AWS Security Hub from ~60% to ~80% by remediating IAM, networking, and compute findings
+- **Junior DevOps Engineer:** Rightsized EC2 and non-production environments, reducing infrastructure costs by ~70% while maintaining performance
+- **Junior DevOps Engineer:** Managed and tuned OpenSearch clusters for production search workloads
+- **Trainee DevOps Engineer (2021 - 2022):** Developed and deployed Dockerized Flask and TypeScript/Express applications across AWS Lambda, ECS Fargate, and EC2, including MongoDB-backed backends for two e-commerce platforms

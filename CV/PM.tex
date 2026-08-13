@@ -16,7 +16,6 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\input{glyphtounicode}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -41,8 +40,6 @@
 \titleformat{\section}{
   \vspace{-6pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
-
-\pdfgentounicode=1
 
 % Custom commands
 \newcommand{\resumeItem}[1]{
@@ -102,50 +99,49 @@
 \resumeSubHeadingListStart
 
 \resumeSubheading
-{AI Product Manager}{December 2025 -- June 2026}
+{AI Product Manager}{December 2025 - June 2026}
 {Imagine.art / Vyro.ai}{Islamabad, On Site}
 \resumeItemListStart
-\resumeItem{Led OmniAgent end-to-end as the new AI core of ChatlyAI, scaling from 0 to 5,000 DAUs and 15,000+ organic generations; owned execution from architecture to growth and contributed production PRs alongside the engineering team.}
-\resumeItem{Independently built and launched Chatly's AI Chrome extension in 2 weeks using Claude, acquiring 2,000+ organic users immediately post-launch with zero paid acquisition.}
-\resumeItem{Owned the product lifecycle for AI Slides end-to-end (research, PoC, pipeline architecture, launch), reaching 10,000+ users within 1 month through rapid iteration and user-focused design.}
-\resumeItem{Contributed to scaling the broader product from 200K to 1.2M+ MAUs (6x) and 10M+ sign-ups through feature prioritization, growth experiments, and cross-functional execution.}
-\resumeItem{Supported revenue growth into the \$6.5M range through pricing experiments, funnel optimization, and Stripe billing improvements.}
-\resumeItem{Helped scale the product org from 5 to 35+ members while leading a cross-functional team of 10 engineers; built internal automation tools to reduce manual effort and improve delivery velocity.}
-\resumeItem{Improved AI image generation quality ratings by 50\% through structured prompt engineering, model parameter tuning, and iterative testing across generation configurations.}
-\resumeItem{Automated internal workflows (vendor invoicing, template updates, review tracking) via serverless functions, cutting hours-long processes to minutes and freeing engineering capacity for product work.}
+\resumeItem{Led OmniAgent from architecture to launch as ChatlyAI's AI core, reaching 5k DAUs and 15k+ organic generations from zero.}
+\resumeItem{Contributed production PRs alongside the engineering team while shipping AI product features.}
+\resumeItem{Built and launched Chatly's AI Chrome extension in 2 weeks, acquiring 2k+ organic users with zero paid acquisition.}
+\resumeItem{Owned AI Slides from research through launch in 1 month, reaching 10k+ users through rapid iteration and user-focused design.}
+\resumeItem{Scaled the broader product from 200k to 1.2M+ MAUs and 10M+ sign-ups through roadmap prioritization and growth experiments.}
+\resumeItem{Supported growth toward \$6.5M in revenue through pricing, funnel, and Stripe billing improvements.}
+\resumeItem{Scaled the product org from 5 to 35+ members and led a 10-engineer cross-functional team; automated hours-long workflows to minutes.}
+\resumeItem{Improved AI image-generation quality ratings by 50\% through prompt engineering, model tuning, and iterative testing.}
 \resumeItemListEnd
 
 \resumeSubheading
-{Co-Founder \& CTO}{Mar 2024 -- Present}
+{Co-Founder \& CTO}{Mar 2024 - Present}
 {Parhlai}{Islamabad / Remote}
 \resumeItemListStart
-\resumeItem{Founded and scaled an ed-tech platform to 4,000+ MAU, securing ~1M PKR in funding and generating 100K+ PKR in organic revenue.}
-\resumeItem{Led product strategy and roadmap execution, aligning engineering efforts with growth and user engagement goals.}
-\resumeItem{Championed an AI-first engineering culture, leveraging AI tools to accelerate development with a lean team of 4 engineers.}
-\resumeItem{Executed GTM strategies using Reddit and referral programs, driving user acquisition without paid ads.}
-\resumeItem{Ranked key features at \#3 in search results within 2 weeks using Ahrefs and SEO optimization.}
-\resumeItem{Implemented PostHog analytics to track user journeys, inform feature prioritization, and optimize retention.}
-\resumeItem{Maintained technical oversight, architecting a multi-cloud serverless AWS/Cloudflare backend with ~1\% infrastructure cost.}
+\resumeItem{Grew Parhlai to 8k+ registered users and 5k+ MAU while leading a 4-engineer team.}
+\resumeItem{Secured ~1M PKR in funding and generated 500k+ PKR in combined consumer and B2B booked revenue.}
+\resumeItem{Owned product strategy and AI-first execution, using PostHog analytics to prioritize roadmap and retention work.}
+\resumeItem{Drove all-organic acquisition through SEO, Reddit, and referrals, reaching 4.5M+ Google Search impressions and 162k+ clicks; ranked key features \#1 within 2 weeks.}
+\resumeItem{Supported 15k+ quizzes, 1.8M+ MCQs, and a 127k+ question bank.}
+\resumeItem{Architected a serverless AWS/Cloudflare backend and asynchronous MCQ pipeline with Terraform, OCR, YOLOv12, Pinecone, Groq/Gemini, and multi-agent validation; kept infrastructure under 1\% of total spend.}
 \resumeItemListEnd
 
 
 \resumeSubheading
-{Backend and DevOps Engineer}{June 2021 -- December 2025}
+{Backend and DevOps Engineer}{June 2021 - December 2025}
 {Syslify}{UK, Remote}
 \resumeItemListStart
-\resumeItem{Led backend and infrastructure development for multiple production systems, collaborating with stakeholders to translate business requirements into scalable technical solutions.}
-\resumeItem{Built and maintained backends for two e-commerce platforms using TypeScript, Express, and MongoDB, supporting end-to-end data and user management.}
-\resumeItem{Migrated legacy stacks to Terraform-based IaC, managing AWS, GCP, Cloudflare, and GitHub infrastructure with improved reliability and reproducibility.}
-\resumeItem{Designed and implemented CI/CD pipelines using GitHub Actions, enabling automated testing, builds, and deployments across environments.}
-\resumeItem{Reduced CI costs by ~90\% through self-hosted runners on AWS Fargate and optimized Docker layer caching strategies.}
-\resumeItem{Implemented blue/green deployments and improved release workflows, increasing system stability and reducing downtime during production releases.}
-\resumeItem{Improved security posture by implementing SSO (Microsoft Entra ID), strengthening RBAC, and enhancing secret management practices.}
-\resumeItem{Optimized infrastructure usage by rightsizing EC2 and non-production environments, reducing costs by ~70\% while maintaining performance.}
-\resumeItem{Managed and tuned OpenSearch clusters for production workloads, improving search performance and reliability.}
+\resumeItem{Developed and deployed Dockerized Flask and TypeScript/Express apps across AWS Lambda, ECS Fargate, and EC2, including MongoDB-backed backends for two e-commerce platforms.}
+\resumeItem{Migrated CodeCommit, CodePipeline, and manual infrastructure to GitHub + Terraform IaC, standardizing multi-cloud production environments across AWS, GCP, Cloudflare, and GitHub.}
+\resumeItem{Built CI/CD pipelines on GitHub Actions and GitLab CI with Docker layer caching; provisioned self-hosted AWS Fargate runners, cutting costs ~90\% and automating DB, WAF, and state-lock operations.}
+\resumeItem{Implemented blue/green deployments on ECS Fargate via CloudFormation, CodePipeline, and CodeDeploy, with a hotfix path for rapid production fixes.}
+\resumeItem{Hardened access controls with Microsoft Entra SSO, RBAC, GitHub secret scoping, temporary pipeline credentials, and Firebase Auth custom roles.}
+\resumeItem{Built observability with Bash/Python monitoring, Slack/PagerDuty alerts, and Datadog on EC2 and ECS Fargate, improving incident detection by 50\%.}
+\resumeItem{Configured CloudFront + AWS WAF and automated WAF/DNS updates through Terraform and GitHub Actions; built multi-region RDS and Cognito backups for disaster recovery.}
+\resumeItem{Deployed React sites via CloudFront + S3 and Cloudflare Pages; raised AWS Security Hub from ~60\% to ~80\% and cut infrastructure costs ~70\% via EC2 rightsizing.}
+\resumeItem{Managed and tuned OpenSearch clusters for production search workloads.}
 \resumeItemListEnd
 
 \resumeSubheading
-{Associate Software Engineer}{Nov 2023 -- Sept 2024}
+{Associate Software Engineer}{Nov 2023 - Sept 2024}
 {Vfairs}{Lahore, Remote}
 \resumeItemListStart
 \resumeItem{Configured and executed load tests simulating up to 10,000 concurrent users to ensure system stability.}
