@@ -32,7 +32,9 @@ Most visitors will scan the site before they read it in detail. They need a comp
 - The experience table links to a separate internal resume page.
 - The resume page includes the complete work history and a Download PDF action.
 - The PDF action downloads the current DevOps resume from `/resume.pdf`.
-- The home page shows Parhlai first, then Tashreeh.org, Dhoondlai, Finasaan, and smaller projects.
+- The home page shows Parhlai first, then Tashreeh.org, Dhoondlai, Finasaan, Rate My Ustaad, Shaatir Billi, and smaller projects.
+- Tashreeh.org and Dhoondlai are marked as work in progress.
+- Parhlai uses a static capture because its production `SAMEORIGIN` policy blocks cross-site iframe use.
 - Projects with strong media receive a large visual treatment. Projects without suitable media receive a smaller text-led treatment.
 - There is no About page or About section.
 - There is no Playground page.

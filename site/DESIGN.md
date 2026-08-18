@@ -99,7 +99,7 @@ The dark field makes the work feel substantial without making the interface heav
 - Flat rows and one-pixel rules instead of text cards.
 - Orange used as a narrow path for state and direction.
 - Calibre for reading; SF Mono only for dates and technical metadata.
-- Large real product media for the four primary products; compact text treatment for smaller work.
+- Large real product media for primary products; compact text treatment for smaller work.
 
 ## Colors
 
