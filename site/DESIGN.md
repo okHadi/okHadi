@@ -9,8 +9,6 @@ colors:
   signal: "#ff5a1f"
   media-surface: "#141412"
   body-strong: "#b8b8b1"
-  parhlai-canvas: "#fafafa"
-  parhlai-purple: "#5b35db"
 typography:
   display:
     fontFamily: "Calibre, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
@@ -192,11 +190,11 @@ Most interface geometry is square and line-based. One-pixel horizontal rules def
 - **Corner Style:** Gently rounded media corners.
 - **Background:** Media Black.
 - **Behavior:** Clip the image and apply only a very small hover scale. Do not add a shadow.
-- **Parhlai motion:** Recreate its real rotating exam-word sequence over the static capture. Pause it off-screen and use a static word for reduced motion.
+- **Parhlai motion:** Use the lightweight real-page video capture for the rotating exam-word sequence. Pause it off-screen and show its poster for reduced motion.
 
 ### Page Continuity
 
-- Use the browser View Transitions API for same-origin page changes, with an immediate fallback.
+- Use a site-controlled transition for same-origin page changes: the orange header path extends while the current page closes, then retracts as the destination opens.
 - Resume anchors briefly mark the selected role and move its bullet list into place.
 - All navigation motion must stop when reduced motion is requested.
 

@@ -41,6 +41,14 @@ const structuredData = {
     <link rel="canonical" href={canonical} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script is:inline>
+      try {
+        if (sessionStorage.getItem('portfolio-route-transition') === '1') {
+          document.documentElement.classList.add('is-arriving');
+          sessionStorage.removeItem('portfolio-route-transition');
+        }
+      } catch {}
+    </script>
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Hadi Khan" />
     <meta property="og:title" content={pageTitle} />
@@ -61,5 +69,28 @@ const structuredData = {
     <Header path={Astro.url.pathname} />
     <div id="content"><slot /></div>
     <Footer />
+    <script>
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      document.addEventListener('click', (event) => {
+        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+        const target = event.target;
+        const link = target instanceof Element ? target.closest('a') : null;
+        if (!(link instanceof HTMLAnchorElement) || link.target || link.hasAttribute('download')) return;
+
+        const destination = new URL(link.href, window.location.href);
+        if (destination.origin !== window.location.origin || destination.protocol !== 'http:' && destination.protocol !== 'https:') return;
+        if (destination.pathname === window.location.pathname && destination.search === window.location.search) return;
+        if (reducedMotion.matches) return;
+
+        event.preventDefault();
+        try { sessionStorage.setItem('portfolio-route-transition', '1'); } catch {}
+        document.documentElement.classList.add('is-leaving');
+        window.setTimeout(() => window.location.assign(destination.href), 220);
+      });
+
+      window.addEventListener('pageshow', () => document.documentElement.classList.remove('is-leaving'));
+    </script>
   </body>
 </html>

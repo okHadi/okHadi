@@ -32,7 +32,7 @@ const visualProjects = [
     href: 'https://parhlai.com/',
     image: parhlaiImage,
     alt: 'Parhlai entry-test preparation home page',
-    animated: true,
+    video: '/parhlai-live.mp4',
   },
   {
     title: 'Tashreeh.org',
@@ -133,13 +133,12 @@ const moreProjects = [
             </div>
           </div>
           <a class:list={['project-media', project.mediaClass]} href={project.href} aria-label={`Visit ${project.title}`}>
-            <Image src={project.image} alt={project.alt} widths={[640, 960, 1280]} sizes="(max-width: 900px) calc(100vw - 36px), 65vw" quality={86} />
-            {project.animated && (
-              <span class="parhlai-word" aria-hidden="true">
-                {['entry test', 'MDCAT', 'NET (NUST)', 'NUMS', 'AKU', 'ECAT (UET)', 'FAST-NU', 'GIKI', 'IBA'].map((word, wordIndex) => (
-                  <span style={`--word-index: ${wordIndex}`}>{word},</span>
-                ))}
-              </span>
+            {project.video ? (
+              <video muted loop playsinline preload="metadata" poster={project.image.src} aria-hidden="true">
+                <source src={project.video} type="video/mp4" />
+              </video>
+            ) : (
+              <Image src={project.image} alt={project.alt} widths={[640, 960, 1280]} sizes="(max-width: 900px) calc(100vw - 36px), 65vw" quality={86} />
             )}
           </a>
         </article>
@@ -194,15 +193,8 @@ const moreProjects = [
   .project-media.portrait { aspect-ratio: 1 / 1; }
   .project-media.wide { aspect-ratio: 16 / 9; }
   .project-media :global(img) { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 500ms var(--ease-out); }
+  .project-media video { width: 100%; height: 100%; object-fit: cover; object-position: top; }
   .project-media:hover :global(img) { transform: scale(1.012); }
-  .parhlai-word { position: absolute; top: 28.3%; left: 17.7%; width: 31%; height: 9.5%; overflow: hidden; background: var(--parhlai-canvas); color: var(--parhlai-purple); font-family: var(--font-sans); font-size: 5cqi; font-weight: 600; letter-spacing: -0.05em; line-height: 1; white-space: nowrap; }
-  .parhlai-word > span { position: absolute; inset: 10% auto auto 0; opacity: 0; transform: translateY(32%); animation: parhlai-cycle 16.65s var(--ease-out) infinite; animation-delay: calc(var(--word-index) * 1.85s); }
-  .project-media:not(.is-visible) .parhlai-word > span { animation-play-state: paused; }
-  @keyframes parhlai-cycle {
-    0% { opacity: 0; transform: translateY(32%); }
-    1.2%, 9.6% { opacity: 1; transform: translateY(0); }
-    11.11%, 100% { opacity: 0; transform: translateY(-32%); }
-  }
   .more-work { padding: 12px 0 120px; }
   .more-work h2 { margin-bottom: 22px; font-size: 1.75rem; }
   .more-work ul { margin: 0; padding: 0; border-top: 1px solid var(--rule); list-style: none; }
@@ -224,16 +216,20 @@ const moreProjects = [
     .more-work a { grid-template-columns: 1fr; gap: 2px; padding: 12px 0; }
     .more-work a span:nth-child(2) { grid-column: 1 / -1; grid-row: 2; }
   }
-  @media (prefers-reduced-motion: reduce) {
-    .parhlai-word > span { display: none; animation: none; }
-    .parhlai-word > span:first-child { display: block; opacity: 1; transform: none; }
-  }
 </style>
 
 <script>
-  const animatedMedia = document.querySelectorAll('.project-media:has(.parhlai-word)');
+  const projectVideos = document.querySelectorAll<HTMLVideoElement>('.project-media video');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => entry.target.classList.toggle('is-visible', entry.isIntersecting));
+    entries.forEach((entry) => {
+      const video = entry.target as HTMLVideoElement;
+      if (entry.isIntersecting && !reducedMotion.matches) video.play().catch(() => {});
+      else video.pause();
+    });
   }, { rootMargin: '120px' });
-  animatedMedia.forEach((media) => observer.observe(media));
+  projectVideos.forEach((video) => observer.observe(video));
+  reducedMotion.addEventListener('change', () => {
+    projectVideos.forEach((video) => reducedMotion.matches ? video.pause() : video.play().catch(() => {}));
+  });
 </script>
