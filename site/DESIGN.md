@@ -190,7 +190,7 @@ Most interface geometry is square and line-based. One-pixel horizontal rules def
 - **Corner Style:** Gently rounded media corners.
 - **Background:** Media Black.
 - **Behavior:** Clip the image and apply only a very small hover scale. Do not add a shadow.
-- **Parhlai motion:** Use the lightweight real-page video capture for the rotating exam-word sequence. Pause it off-screen and show its poster for reduced motion.
+- **Parhlai motion:** Use the lightweight desktop real-page video capture for the rotating exam-word sequence. Pause it off-screen and show its poster for reduced motion.
 
 ### Page Continuity
 

@@ -34,7 +34,7 @@ Most visitors will scan the site before they read it in detail. They need a comp
 - The PDF action downloads the current DevOps resume from `/resume.pdf`.
 - The home page shows Parhlai first, then Tashreeh.org, Dhoondlai, Finasaan, Rate My Ustaad, Shaatir Billi, and smaller projects.
 - Tashreeh.org and Dhoondlai are marked as work in progress.
-- Parhlai uses a lightweight real-page video capture because its production `SAMEORIGIN` policy blocks cross-site iframe use. The static capture remains its poster and reduced-motion fallback.
+- Parhlai uses a lightweight desktop real-page video capture because its production `SAMEORIGIN` policy blocks cross-site iframe use. The static capture remains its poster and reduced-motion fallback.
 - Projects with strong media receive a large visual treatment. Projects without suitable media receive a smaller text-led treatment.
 - There is no About page or About section.
 - There is no Playground page.
