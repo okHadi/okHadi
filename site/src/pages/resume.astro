@@ -8,6 +8,11 @@ const jobs = Object.values(modules)
     Content: entry.Content,
   }))
   .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
+
+const jobId = (company: string) => company
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, '-')
+  .replace(/(^-|-$)/g, '');
 ---
 
 <BaseLayout
@@ -25,7 +30,7 @@ const jobs = Object.values(modules)
 
     <section class="jobs" aria-label="Work history">
       {jobs.map(({ frontmatter, Content }) => (
-        <article class="job">
+        <article class="job" id={jobId(frontmatter.company)}>
           <header>
             <h2>{frontmatter.title}</h2>
             <p class="company"><a href={frontmatter.url}>{frontmatter.company}</a></p>
@@ -63,19 +68,29 @@ const jobs = Object.values(modules)
   .download { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: 8px 16px; border-radius: 999px; color: var(--ink); background: var(--paper); font-size: 0.95rem; text-decoration: none; white-space: nowrap; }
   .download:hover, .download:focus-visible { background: var(--signal); }
   .jobs { padding-top: 18px; }
-  .job { display: grid; grid-template-columns: minmax(210px, 0.85fr) minmax(420px, 2.15fr); gap: clamp(32px, 7vw, 90px); padding: 54px 0 62px; border-bottom: 1px solid var(--rule); }
+  .job { display: grid; grid-template-columns: minmax(210px, 0.85fr) minmax(420px, 2.15fr); gap: clamp(32px, 7vw, 90px); padding: 54px 0 62px; border-bottom: 1px solid var(--rule); scroll-margin-top: 24px; }
   .job h2 { font-size: 1.7rem; line-height: 1.05; }
   .company { margin-top: 7px; color: var(--paper); }
   .company a { color: inherit; text-decoration: none; }
   .company a:hover, .company a:focus-visible { color: var(--signal); }
   .range, .location { margin-top: 9px; font-family: var(--font-mono); font-size: 0.7rem; line-height: 1.5; }
-  .job-body { color: #b8b8b1; font-size: 1rem; }
+  .job-body { color: #b8b8b1; font-size: 1.2rem; }
   .job-body :global(> :first-child) { margin-top: 0; }
   .job-body :global(p) { margin: 1.4rem 0 0.75rem; color: var(--paper); }
   .job-body :global(strong) { color: var(--paper); font-weight: 500; }
   .job-body :global(ul) { margin: 0; padding-left: 1.15rem; }
   .job-body :global(li) { margin-bottom: 0.72rem; padding-left: 0.25rem; }
   .job-body :global(li::marker) { color: var(--signal); }
+  .job:target header h2 { animation: target-heading 700ms var(--ease-out); }
+  .job:target .job-body { animation: target-body 560ms var(--ease-out); }
+  @keyframes target-heading {
+    0%, 35% { color: var(--signal); }
+    100% { color: var(--paper); }
+  }
+  @keyframes target-body {
+    from { opacity: 0.55; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
   .details { display: grid; grid-template-columns: minmax(180px, 0.85fr) minmax(420px, 2.15fr); gap: clamp(32px, 7vw, 90px); padding-top: 58px; }
   .details h2 { font-size: 1.7rem; }
   dl { margin: 0; }
@@ -89,6 +104,24 @@ const jobs = Object.values(modules)
     .resume-header, .job, .details { grid-template-columns: 1fr; align-items: start; }
     .download { justify-self: start; }
     .job, .details { gap: 26px; }
+    .job-body { font-size: 1.2rem; }
     .detail-line { grid-template-columns: 1fr; gap: 2px; }
   }
+  @media (prefers-reduced-motion: reduce) {
+    .job:target header h2, .job:target .job-body { animation: none; }
+  }
 </style>
+
+<script>
+  const scrollToJob = async () => {
+    if (!window.location.hash) return;
+    await document.fonts?.ready;
+    const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+    if (!target) return;
+    const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+    requestAnimationFrame(() => target.scrollIntoView({ behavior, block: 'start' }));
+  };
+
+  window.addEventListener('load', scrollToJob, { once: true });
+  window.addEventListener('hashchange', scrollToJob);
+</script>

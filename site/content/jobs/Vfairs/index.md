@@ -9,3 +9,4 @@ url: 'https://www.vfairs.com/'
 
 - Developed and improved 40+ job scrapers using Selenium and Scrapy, increasing data fetched by 50%
 - Configured and developed load tests for multiple applications using Artillery.io, K6, and Flood, simulating up to 10,000 users
+- Designed and provisioned ephemeral QA environments on AWS ECS, triggered by pull requests, to support parallel testing across a team of 50+ developers

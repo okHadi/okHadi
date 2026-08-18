@@ -3,7 +3,7 @@ date: '2026-06-01'
 title: 'Senior DevOps Engineer'
 company: 'Syslify'
 location: 'UK, Remote'
-range: 'June 2026 - Present; previously June 2021 - December 2025'
+range: 'June 2026 - Present'
 url: 'https://syslify.com/'
 ---
 
