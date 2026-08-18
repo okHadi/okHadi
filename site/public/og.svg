@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0b0b0a"/>
+  <rect y="0" width="1200" height="2" fill="#292925"/>
+  <rect y="0" width="180" height="2" fill="#ff5a1f"/>
+  <text x="80" y="116" fill="#f1f1ec" font-family="Arial, sans-serif" font-size="28" font-weight="700">hk</text>
+  <text x="80" y="318" fill="#f1f1ec" font-family="Arial, sans-serif" font-size="86" font-weight="700" letter-spacing="-3">Hadi Khan</text>
+  <text x="80" y="372" fill="#f1f1ec" font-family="Arial, sans-serif" font-size="34">DevOps engineer, product builder, and startup co-founder.</text>
+  <text x="80" y="496" fill="#92928b" font-family="Arial, sans-serif" font-size="26">mhadi.dev</text>
+  <circle cx="1102" cy="501" r="8" fill="#ff5a1f"/>
+</svg>

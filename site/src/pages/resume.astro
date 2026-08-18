@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const modules = import.meta.glob('../../content/jobs/*/index.md', { eager: true });
+const jobs = Object.values(modules)
+  .map((entry: any) => ({
+    frontmatter: entry.frontmatter,
+    Content: entry.Content,
+  }))
+  .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
+---
+
+<BaseLayout
+  title="Resume"
+  description="Hadi Khan's work experience across DevOps, product, software engineering, and startup leadership."
+>
+  <main>
+    <header class="resume-header">
+      <div>
+        <h1>Work experience</h1>
+        <p>Detailed work across DevOps, product, engineering, and company building.</p>
+      </div>
+      <a class="download" href="/resume.pdf" download="Hadi-Khan-DevOps-Resume.pdf">Download PDF</a>
+    </header>
+
+    <section class="jobs" aria-label="Work history">
+      {jobs.map(({ frontmatter, Content }) => (
+        <article class="job">
+          <header>
+            <h2>{frontmatter.title}</h2>
+            <p class="company"><a href={frontmatter.url}>{frontmatter.company}</a></p>
+            <p class="range">{frontmatter.range}</p>
+            <p class="location">{frontmatter.location}</p>
+          </header>
+          <div class="job-body"><Content /></div>
+        </article>
+      ))}
+    </section>
+
+    <section class="details">
+      <h2>Skills & education</h2>
+      <div>
+        <dl>
+          <div class="detail-line"><dt>Languages</dt><dd>Python, TypeScript, JavaScript, Bash</dd></div>
+          <div class="detail-line"><dt>Cloud & DevOps</dt><dd>AWS, Cloudflare, Docker, Terraform, Ansible, GitHub Actions, Datadog</dd></div>
+          <div class="detail-line"><dt>Application</dt><dd>Express, Flask, React, Selenium, Postgres, Firebase</dd></div>
+          <div class="detail-line"><dt>Product</dt><dd>Product strategy, analytics, growth experiments, AI systems</dd></div>
+        </dl>
+        <div class="education">
+          <h3>National University of Sciences and Technology</h3>
+          <p>Bachelor of Science in Computer Science · Islamabad, Pakistan</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  main { width: min(calc(100% - 64px), 1040px); margin: 0 auto; padding: 76px 0 120px; }
+  .resume-header { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: end; padding-bottom: 52px; border-bottom: 1px solid var(--rule); }
+  .resume-header h1 { font-size: clamp(3rem, 7vw, 5.5rem); letter-spacing: -0.035em; }
+  .resume-header p { max-width: 620px; margin-top: 16px; font-size: 1.15rem; }
+  .download { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: 8px 16px; border-radius: 999px; color: var(--ink); background: var(--paper); font-size: 0.95rem; text-decoration: none; white-space: nowrap; }
+  .download:hover, .download:focus-visible { background: var(--signal); }
+  .jobs { padding-top: 18px; }
+  .job { display: grid; grid-template-columns: minmax(210px, 0.85fr) minmax(420px, 2.15fr); gap: clamp(32px, 7vw, 90px); padding: 54px 0 62px; border-bottom: 1px solid var(--rule); }
+  .job h2 { font-size: 1.7rem; line-height: 1.05; }
+  .company { margin-top: 7px; color: var(--paper); }
+  .company a { color: inherit; text-decoration: none; }
+  .company a:hover, .company a:focus-visible { color: var(--signal); }
+  .range, .location { margin-top: 9px; font-family: var(--font-mono); font-size: 0.7rem; line-height: 1.5; }
+  .job-body { color: #b8b8b1; font-size: 1rem; }
+  .job-body :global(> :first-child) { margin-top: 0; }
+  .job-body :global(p) { margin: 1.4rem 0 0.75rem; color: var(--paper); }
+  .job-body :global(strong) { color: var(--paper); font-weight: 500; }
+  .job-body :global(ul) { margin: 0; padding-left: 1.15rem; }
+  .job-body :global(li) { margin-bottom: 0.72rem; padding-left: 0.25rem; }
+  .job-body :global(li::marker) { color: var(--signal); }
+  .details { display: grid; grid-template-columns: minmax(180px, 0.85fr) minmax(420px, 2.15fr); gap: clamp(32px, 7vw, 90px); padding-top: 58px; }
+  .details h2 { font-size: 1.7rem; }
+  dl { margin: 0; }
+  .detail-line { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 10px 0; border-bottom: 1px solid var(--rule); }
+  dt { color: var(--paper); }
+  dd { margin: 0; }
+  .education { margin-top: 48px; }
+  .education p { margin-top: 8px; }
+  @media (max-width: 760px) {
+    main { width: min(calc(100% - 36px), 1040px); padding-top: 54px; }
+    .resume-header, .job, .details { grid-template-columns: 1fr; align-items: start; }
+    .download { justify-self: start; }
+    .job, .details { gap: 26px; }
+    .detail-line { grid-template-columns: 1fr; gap: 2px; }
+  }
+</style>

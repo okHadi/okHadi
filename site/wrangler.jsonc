@@ -6,10 +6,12 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "mhadi",
   "account_id": "7ae1de37f9adbd35d53ec81b6c1cb99b",
-  "compatibility_date": "2025-03-01",
+  "compatibility_date": "2026-08-18",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
-    "directory": "./public"
+    "directory": "./dist",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page"
   },
   "observability": {
     "enabled": true

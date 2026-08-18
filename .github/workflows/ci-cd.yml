@@ -9,8 +9,7 @@ on:
       - main
 
 permissions:
-  packages: write
-  contents: write
+  contents: read
 
 defaults:
   run:
@@ -35,6 +34,7 @@ jobs:
           pdflatex -interaction=nonstopmode ENG.tex
           pdflatex -interaction=nonstopmode ENG.tex
           cp ENG.pdf ../site/static/resume.pdf
+          cp ENG.pdf ../site/public/resume.pdf
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -42,10 +42,10 @@ jobs:
           node-version-file: site/.nvmrc
 
       - name: Install dependencies
-        run: yarn install
+        run: npm ci
 
       - name: Build application
-        run: yarn run build
+        run: npm run build
 
   buildAndDeploySite:
     name: Prod Build and Deploy Site
@@ -66,6 +66,7 @@ jobs:
           pdflatex -interaction=nonstopmode ENG.tex
           pdflatex -interaction=nonstopmode ENG.tex
           cp ENG.pdf ../site/static/resume.pdf
+          cp ENG.pdf ../site/public/resume.pdf
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -73,10 +74,10 @@ jobs:
           node-version-file: site/.nvmrc
 
       - name: Install dependencies
-        run: yarn install
+        run: npm ci
 
       - name: Build application
-        run: yarn run build
+        run: npm run build
 
       - name: Deploy to cloudflare
         id: deployProduction
@@ -84,5 +85,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           command: deploy
-          wranglerVersion: 4.42.0
           workingDirectory: "site"

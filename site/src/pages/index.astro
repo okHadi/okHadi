@@ -1,0 +1,181 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import parhlaiImage from '../../content/featured/Parhlai/parhlai.png';
+import tashreehImage from '../../content/featured/Tashreeh/tashreeh.png';
+import dhoondlaiImage from '../../content/featured/Dhoondlai/dhoondlai.png';
+import finasaanImage from '../../content/featured/Finasaan/finasaan.png';
+
+const CONTRACT = `<!--
+THESIS: A maintained index of real work; it refuses the oversized portfolio hero.
+OWN-WORLD: Near-black, warm white, one orange signal, flat ruled rows, and large real product media.
+STORY: Scan Hadi's current position, follow his career, then inspect the products he has built.
+FIRST VIEWPORT: Compact identity and paragraph above a four-row experience ledger and one clear resume link.
+FORM: Simple index, approved composition A, key home-a-index.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->`;
+
+const experience = [
+  ['Syslify', '2026—Now', 'Senior DevOps Engineer'],
+  ['Parhlai', '2024—Now', 'Co-Founder & CTO'],
+  ['ImagineArt / Vyro.ai', '2025—2026', 'Product Manager'],
+  ['vFairs', '2023—2024', 'Associate Software Engineer'],
+];
+
+const visualProjects = [
+  {
+    title: 'Parhlai',
+    description: 'AI-powered entry-test preparation for students in Pakistan. I lead product, engineering, and cloud infrastructure as co-founder and CTO.',
+    meta: ['2024—Now', 'Co-founder & CTO', 'Product · Engineering · Infrastructure'],
+    href: 'https://parhlai.com/',
+    image: parhlaiImage,
+    alt: 'Parhlai entry-test preparation home page',
+  },
+  {
+    title: 'Tashreeh.org',
+    description: 'A digital library for reading and understanding Urdu poetry, built from scanned literature through an AI-assisted data pipeline.',
+    meta: ['2025—Now', 'Product & engineering', 'TypeScript · AI pipeline · Cloudflare'],
+    href: 'https://tashreeh.org/',
+    github: 'https://github.com/tashreeh/gobi',
+    image: tashreehImage,
+    alt: 'Tashreeh.org Urdu poetry library design',
+  },
+  {
+    title: 'Dhoondlai',
+    description: 'An open-source PC parts price comparison platform for Pakistan, powered by vendor-isolated scrapers and serverless infrastructure.',
+    meta: ['2025', 'Product & engineering', 'Python · TypeScript · AWS · Terraform'],
+    href: 'https://dhoondlai.com/',
+    github: 'https://github.com/Dhoondlai',
+    image: dhoondlaiImage,
+    alt: 'Dhoondlai PC parts price comparison interface',
+  },
+  {
+    title: 'Finasaan',
+    description: 'A financial literacy platform for Pakistan that explains investing, insurance, and tax concepts through localized guidance and market data.',
+    meta: ['2025', 'Final year project', 'Next.js · AI · Cloudflare'],
+    href: 'https://finasaan.framer.website/',
+    github: 'https://github.com/Finasaan',
+    image: finasaanImage,
+    alt: 'Finasaan financial literacy product interface',
+  },
+];
+
+const moreProjects = [
+  ['Rate My Ustaad', 'Professor reviews for Pakistani universities', 'https://github.com/rate-my-ustaad'],
+  ['QALMS', 'One dashboard for NUST academic portals', 'https://github.com/okHadi/QALMS'],
+  ['Docker Services Status', 'Remote Docker service monitoring', 'https://github.com/okHadi/docker-services-status'],
+  ['Repak', 'Community crime reporting and mapping', 'https://github.com/okHadi/Repak'],
+  ['Vostro 14 Hackintosh EFI', 'OpenCore configuration for Dell Vostro', 'https://github.com/okHadi/vostro14-hackintosh-efi'],
+];
+---
+
+<BaseLayout description="Hadi Khan is a DevOps engineer, product builder, and startup co-founder working across cloud infrastructure, AI products, and software engineering.">
+  <Fragment slot="contract" set:html={CONTRACT} />
+  <main>
+    <section class="intro">
+      <h1>Hadi Khan</h1>
+      <p class="role">DevOps engineer, product builder, and startup co-founder.</p>
+      <p class="summary">I build reliable infrastructure, automate the work around it, and ship products people use. I currently work at Syslify and build Parhlai.</p>
+    </section>
+
+    <section class="experience" aria-label="Experience summary">
+      <div class="experience-rows">
+        {experience.map(([company, range, role]) => (
+          <a class="experience-row" href="/resume">
+            <span class="company">{company}</span>
+            <span class="range">{range}</span>
+            <span class="experience-role">{role}</span>
+          </a>
+        ))}
+      </div>
+      <a class="more-link" href="/resume">View full experience</a>
+    </section>
+
+    <section class="work" id="work" aria-label="Selected products">
+      {visualProjects.map((project, index) => (
+        <article class:list={['visual-project', { reverse: index % 2 === 1 }]}>
+          <div class="project-copy">
+            <h2>{project.title}</h2>
+            <p class="project-description">{project.description}</p>
+            <ul class="facts">
+              {project.meta.map((value) => <li>{value}</li>)}
+            </ul>
+            <div class="project-links">
+              <a href={project.href}>Visit site</a>
+              {project.github && <a href={project.github}>GitHub</a>}
+            </div>
+          </div>
+          <a class="project-media" href={project.href} aria-label={`Visit ${project.title}`}>
+            <Image src={project.image} alt={project.alt} widths={[640, 960, 1280]} sizes="(max-width: 900px) calc(100vw - 36px), 65vw" quality={86} />
+          </a>
+        </article>
+      ))}
+    </section>
+
+    <section class="more-work">
+      <h2>More work</h2>
+      <ul>
+        {moreProjects.map(([title, detail, href]) => (
+          <li>
+            <a href={href}>
+              <strong>{title}</strong>
+              <span>{detail}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  main { width: var(--page-width); margin: 0 auto; }
+  .intro { max-width: 730px; padding: 60px 0 34px; }
+  .intro h1 { margin-bottom: 4px; font-size: clamp(3rem, 5.2vw, 4.75rem); letter-spacing: -0.035em; }
+  .role { color: var(--paper); font-size: clamp(1.25rem, 2.2vw, 1.65rem); }
+  .summary { max-width: 610px; margin-top: 22px; font-size: 1.15rem; }
+  .experience { padding-bottom: 76px; }
+  .experience-rows { border-top: 1px solid var(--rule); }
+  .experience-row { display: grid; grid-template-columns: minmax(160px, 1.25fr) minmax(130px, 0.9fr) minmax(220px, 2.25fr); gap: 24px; align-items: center; min-height: 49px; border-bottom: 1px solid var(--rule); color: var(--muted); text-decoration: none; }
+  .company { color: var(--paper); }
+  .range { font-family: var(--font-mono); font-size: 0.72rem; }
+  .experience-row:hover, .experience-row:focus-visible { color: var(--paper); }
+  .experience-row:hover .company, .experience-row:focus-visible .company { color: var(--signal); }
+  .more-link { display: inline-block; margin-top: 16px; color: var(--signal); text-decoration: none; }
+  .work { padding-bottom: 120px; }
+  .visual-project { display: grid; grid-template-columns: minmax(240px, 0.8fr) minmax(520px, 2.1fr); gap: clamp(36px, 6vw, 84px); align-items: start; padding-top: 96px; }
+  .visual-project.reverse { grid-template-columns: minmax(520px, 2.1fr) minmax(240px, 0.8fr); }
+  .visual-project.reverse .project-copy { grid-column: 2; grid-row: 1; }
+  .visual-project.reverse .project-media { grid-column: 1; grid-row: 1; }
+  .visual-project h2 { font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -0.025em; }
+  .project-description { margin-top: 16px; }
+  .facts { margin: 28px 0 0; padding: 0; border-top: 1px solid var(--rule); list-style: none; }
+  .facts li { padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 0.9rem; }
+  .project-links { display: flex; gap: 20px; margin-top: 22px; }
+  .project-links a { color: var(--paper); text-decoration: none; }
+  .project-links a:hover, .project-links a:focus-visible { color: var(--signal); }
+  .project-media { overflow: hidden; aspect-ratio: 16 / 10; border-radius: 12px; background: #141412; }
+  .project-media :global(img) { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 500ms var(--ease-out); }
+  .project-media:hover :global(img) { transform: scale(1.012); }
+  .more-work { padding: 12px 0 120px; }
+  .more-work h2 { margin-bottom: 22px; font-size: 1.75rem; }
+  .more-work ul { margin: 0; padding: 0; border-top: 1px solid var(--rule); list-style: none; }
+  .more-work a { display: grid; grid-template-columns: minmax(220px, 0.9fr) minmax(300px, 2.1fr); gap: 28px; align-items: center; min-height: 54px; border-bottom: 1px solid var(--rule); color: var(--muted); text-decoration: none; }
+  .more-work strong { color: var(--paper); font-weight: 500; }
+  .more-work a:hover strong, .more-work a:focus-visible strong { color: var(--signal); }
+  @media (max-width: 900px) {
+    .visual-project, .visual-project.reverse { grid-template-columns: 1fr; gap: 28px; padding-top: 82px; }
+    .visual-project.reverse .project-copy, .visual-project.reverse .project-media { grid-column: 1; }
+    .visual-project.reverse .project-copy { grid-row: 1; }
+    .visual-project.reverse .project-media { grid-row: 2; }
+  }
+  @media (max-width: 700px) {
+    .intro { padding-top: 54px; }
+    .experience { padding-bottom: 82px; }
+    .experience-row { grid-template-columns: 1fr auto; gap: 2px 16px; padding: 12px 0; }
+    .range { grid-column: 2; grid-row: 1; }
+    .experience-role { grid-column: 1 / -1; font-size: 0.95rem; }
+    .more-work a { grid-template-columns: 1fr; gap: 2px; padding: 12px 0; }
+    .more-work a span:nth-child(2) { grid-column: 1 / -1; grid-row: 2; }
+  }
+</style>

@@ -1,11 +1,12 @@
 # Project dependencies
 .cache
+.astro
+.impeccable/
 node_modules
 yarn-error.log
-package-lock.json
 
 # Build directory
-/public
+/dist
 .DS_Store
 
 .vscode/

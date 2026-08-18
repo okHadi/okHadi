@@ -1,0 +1,16 @@
+<footer>
+  <span>Hadi Khan · Islamabad, Pakistan</span>
+  <nav aria-label="Social links">
+    <a href="https://github.com/okHadi" rel="me">GitHub</a>
+    <a href="https://www.linkedin.com/in/okhadi/" rel="me">LinkedIn</a>
+    <a href="mailto:hello@mhadi.dev">Email</a>
+  </nav>
+</footer>
+
+<style>
+  footer { display: flex; align-items: center; justify-content: space-between; gap: 24px; width: var(--page-width); margin: 0 auto; padding: 38px 0 44px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.95rem; }
+  nav { display: flex; gap: 22px; }
+  a { color: var(--paper); text-decoration: none; }
+  a:hover, a:focus-visible { color: var(--signal); }
+  @media (max-width: 640px) { footer { align-items: flex-start; flex-direction: column; } }
+</style>

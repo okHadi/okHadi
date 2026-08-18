@@ -1,6 +1,6 @@
 ---
 date: '2023-11-01'
-title: 'Assc. Software Engineer'
+title: 'Associate Software Engineer'
 company: 'Vfairs'
 location: 'Lahore, Remote (Part-time)'
 range: 'Nov 2023 - Sept 2024'
