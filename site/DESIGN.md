@@ -177,7 +177,7 @@ Most interface geometry is square and line-based. One-pixel horizontal rules def
 
 - **Style:** Compact Calibre links on a 68px desktop header and 60px mobile header.
 - **State:** Warm paper by default; orange for hover, keyboard focus, and the current page.
-- **Signature:** A short orange segment sits over the otherwise charcoal bottom rule.
+- **Rule:** A quiet charcoal line separates the header from the page.
 
 ### Ledger Rows
 
@@ -194,7 +194,7 @@ Most interface geometry is square and line-based. One-pixel horizontal rules def
 
 ### Page Continuity
 
-- Use a site-controlled transition for same-origin page changes: the orange header path extends while the current page closes, then retracts as the destination opens.
+- Use a site-controlled content transition for same-origin page changes.
 - Resume anchors briefly mark the selected role and move its bullet list into place.
 - All navigation motion must stop when reduced motion is requested.
 

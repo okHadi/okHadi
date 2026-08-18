@@ -19,13 +19,6 @@ const { path } = Astro.props;
 
 <style>
   .site-header { position: relative; z-index: 10; border-bottom: 1px solid var(--rule); }
-  .site-header::after { content: ''; position: absolute; right: 0; bottom: -1px; left: 0; height: 1px; background: var(--signal); clip-path: inset(0 calc(100% - 9rem) 0 0); }
-  :global(html.is-leaving) .site-header::after { clip-path: inset(0); transition: clip-path 220ms var(--ease-out); }
-  :global(html.is-arriving) .site-header::after { animation: route-line-arrive 440ms var(--ease-out) both; }
-  @keyframes route-line-arrive {
-    from { clip-path: inset(0); }
-    to { clip-path: inset(0 calc(100% - 9rem) 0 0); }
-  }
   .header-inner { display: flex; align-items: center; justify-content: space-between; width: var(--page-width); height: 68px; margin: 0 auto; }
   .mark { display: inline-flex; align-items: center; min-height: 44px; color: var(--paper); font-size: 1.35rem; font-weight: 600; letter-spacing: -0.03em; text-decoration: none; }
   nav { display: flex; gap: 28px; align-items: center; }
@@ -34,8 +27,5 @@ const { path } = Astro.props;
   @media (max-width: 640px) {
     .header-inner { height: 60px; }
     nav { gap: 16px; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    :global(html.is-leaving) .site-header::after, :global(html.is-arriving) .site-header::after { clip-path: inset(0 calc(100% - 9rem) 0 0); animation: none; transition: none; }
   }
 </style>
