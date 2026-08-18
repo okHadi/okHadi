@@ -135,6 +135,7 @@ const moreProjects = [
           <a class:list={['project-media', project.mediaClass]} href={project.href} aria-label={`Visit ${project.title}`}>
             {project.video ? (
               <video muted loop playsinline preload="metadata" poster={project.image.src} aria-hidden="true">
+                <source src="/parhlai-live.webm" type='video/webm; codecs="av01"' />
                 <source src={project.video} type="video/mp4" />
               </video>
             ) : (
