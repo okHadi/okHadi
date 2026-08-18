@@ -190,7 +190,7 @@ Most interface geometry is square and line-based. One-pixel horizontal rules def
 - **Corner Style:** Gently rounded media corners.
 - **Background:** Media Black.
 - **Behavior:** Clip the image and apply only a very small hover scale. Do not add a shadow.
-- **Parhlai motion:** Use the compressed 30 fps desktop capture for the rotating exam-word sequence. Prefer AV1 WebM and retain H.264 MP4 as a compatibility fallback. Pause it off-screen and show its poster for reduced motion.
+- **Parhlai motion:** Use one compressed 60 fps H.264 desktop capture for the rotating exam-word sequence. Pause it off-screen and show its poster for reduced motion.
 
 ### Page Continuity
 
