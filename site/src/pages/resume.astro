@@ -52,6 +52,7 @@ const jobId = (company: string) => company
           <div class="detail-line"><dt>Product</dt><dd>Product strategy, analytics, growth experiments, AI systems</dd></div>
         </dl>
         <div class="education">
+          <p class="education-label">Education</p>
           <h3>National University of Sciences and Technology</h3>
           <p>Bachelor of Science in Computer Science · Islamabad, Pakistan</p>
         </div>
@@ -98,7 +99,9 @@ const jobId = (company: string) => company
   dt { color: var(--paper); }
   dd { margin: 0; }
   .education { margin-top: 48px; }
-  .education p { margin-top: 8px; }
+  .education-label { color: var(--paper); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; }
+  .education h3 { margin-top: 14px; font-size: 1.45rem; line-height: 1.15; }
+  .education p:last-child { margin-top: 8px; }
   @media (max-width: 760px) {
     main { width: min(calc(100% - 36px), 1040px); padding-top: 54px; }
     .resume-header, .job, .details { grid-template-columns: 1fr; align-items: start; }
